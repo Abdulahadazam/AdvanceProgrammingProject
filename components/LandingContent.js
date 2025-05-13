@@ -90,41 +90,8 @@ export default function LandingContent() {
           </Button>
         </Container>
       </Section>
+      </Box>
+    );
+  }
 
-      <Section ref={bookingRef}>
-        <Container maxWidth="lg">
-          <Typography variant="h3" component="h2" gutterBottom sx={{ fontWeight: 'bold' }}>
-            Join ClubMate Today!
-          </Typography>
-          <Typography variant="body1" sx={{ maxWidth: '32rem', mx: 'auto', color: 'text.secondary', mb: 4 }}>
-            Whether you're looking to play or shop, we've got you covered. Join our community today and experience padel at its finest.
-          </Typography>
-          <Grid container spacing={2} justifyContent="center">
-            <Grid item>
-              <Button
-                variant="contained"
-                color="primary"
-                component={Link}
-                href="/booking"
-                sx={{ px: 4 }}
-              >
-                Book Your Court
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button
-                variant="contained"
-                color="secondary"
-                component={Link}
-                href="/products"
-                sx={{ px: 4 }}
-              >
-                Shop Our Products
-              </Button>
-            </Grid>
-          </Grid>
-        </Container>
-      </Section>
-    </Box>
-  );
-}
+      
