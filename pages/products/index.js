@@ -40,6 +40,8 @@ export default function ProductsPage() {
   const [cartOpen, setCartOpen] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
 
+
+  
   useEffect(() => {
     const fetchProducts = async () => {
       try {
