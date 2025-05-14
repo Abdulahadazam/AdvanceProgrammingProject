@@ -40,8 +40,6 @@ export default function ProductsPage() {
   const [cartOpen, setCartOpen] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
 
-
-  
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -70,7 +68,6 @@ export default function ProductsPage() {
   }, [selectedQuality, products]);
 
   useEffect(() => {
-    // Calculate total price whenever the cart changes
     const total = cart.reduce((sum, product) => sum + product.price, 0);
     setTotalPrice(total);
   }, [cart]);
@@ -85,10 +82,14 @@ export default function ProductsPage() {
   };
 
   const handleBuyNow = async () => {
-    // Call API to store cart data in the database
+    // Confirm purchase details (you can add user details like shipping address or payment info here)
+    const userConfirmed = window.confirm('Are you sure you want to proceed with the purchase?');
+    if (!userConfirmed) return;
+
+    // Call API to store cart data and complete the checkout process
     const response = await fetch('/api/checkout', {
       method: 'POST',
-      body: JSON.stringify({ cart }),
+      body: JSON.stringify({ cart, totalPrice }), // Send the cart items and the total price
       headers: {
         'Content-Type': 'application/json',
       },
@@ -99,8 +100,9 @@ export default function ProductsPage() {
       // Empty the cart after successful purchase
       setCart([]);
       setSnackbarOpen(true);
+      alert('Your purchase was successful!');
     } else {
-      alert('Checkout failed');
+      alert('Checkout failed, please try again later.');
     }
   };
 
