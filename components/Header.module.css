@@ -1,0 +1,65 @@
+/* components/Header.module.css */
+.header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+    
+    .scrolled {
+      background-color: #1a1b41;
+    }
+    
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .navLink {
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+    }
+    
+    .navLink::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #fff;
+      transition: width 0.3s;
+    }
+    
+    .navLink:hover::after {
+      width: 100%;
+    }
+    
+    .bookButton {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+    }

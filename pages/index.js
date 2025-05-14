@@ -1,8 +1,12 @@
 import Head from 'next/head';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Header from '../components/Header';
-import LandingContent from '../components/LandingContent';
+import Hero from '../components/Hero';
 import Footer from '../components/Footer';
+import Features from '@/components/Features';
+import PromoSplit from '@/components/PromoSplit';
+import GalleryCarousel from '@/components/GalleryCarousel';
+import JoinTheClubCTA from '@/components/JoinTheClubCTA';
 
 const theme = createTheme({
   palette: {
@@ -24,7 +28,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <LandingContent />
+      <Hero />
+      <Features />
+      <PromoSplit />
+      <GalleryCarousel />
+      <JoinTheClubCTA />
       <Footer />
     </ThemeProvider>
   );
